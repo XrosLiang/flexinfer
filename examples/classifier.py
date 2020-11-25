@@ -21,7 +21,7 @@ def main(imgfp):
     # 2. prepare for transfoms and model
     ## 2.1 transforms
     transform = Compose([
-        TF.Resize((224, 224)),
+        TF.Resize(dst_shape=(224, 224), interpolation=cv2.INTER_LINEAR),
         TF.ToTensor(use_gpu=use_gpu),
         TF.Normalize(use_gpu=use_gpu),
     ])
